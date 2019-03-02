@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Quick Sort Algorithm</h2>
+<p id="console"></p>
+
+<script>
+
+const _ = (id) => document.getElementById(id);
+let goal = [3, 2, 7, 4, 6, 9, 8, 10, 43, 12, 23, 5];
+let count = 0;
+function quickSort(arr) {
+	if(arr.length <= 0){
+    	return arr;
+    }
+    let pivot = arr[arr.length - 1];
+    let left = [];
+    let right = [];
+
+    for (let i = 0; i < arr.length - 1; i++) {
+    	count++
+    	if(arr[i] < pivot) {
+        	left.push(arr[i]);
+        }
+        else {
+        	right.push(arr[i]);
+        }
+    }
+    let x = [...quickSort(left), pivot, ...quickSort(right)];
+    return x
+}
+let x = quickSort(goal);
+_("console").innerHTML = x;
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
