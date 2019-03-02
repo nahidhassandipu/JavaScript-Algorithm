@@ -3,19 +3,16 @@
 <body>
 
     <h2>Binary Search Algorithm in JavaScript with HTML input</h2>
-
     <p>Funniest way to do some binary search with html input and JavaScript output</p>
-
     <input style="padding:8px;" min=0 id="input" value=0 type="number"/>
     <button style="padding:10px;color:white;background:red;border:none" id="btn">Search</button>
-
     <p id="console"></p>
 
 <script>
 
 const _ = (id) => document.getElementById(id);
 _("btn").addEventListener("click", function(){
-	let array, startPoint, endPoint, midPoint, item, position, runTime, unsortedArray;
+    let array, startPoint, endPoint, midPoint, item, position, runTime, unsortedArray;
     item = _("input").value;
     unsortedArray = [5, 3, 19, 122, 23, 34, 345, 56, 7, 78, 98, 123, 234, 65];
     array = unsortedArray.sort((a, b) => (a - b))
