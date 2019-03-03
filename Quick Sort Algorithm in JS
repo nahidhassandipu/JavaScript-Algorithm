@@ -17,8 +17,8 @@ function quickSort(arr) {
     let pivot = arr[arr.length - 1];
     let left = [];
     let right = [];
-
-    for (let i = 0; i < arr.length - 1; i++) {
+    let i = 0;
+    for (; i < arr.length - 1; i++) {
     	count++
     	if(arr[i] < pivot) {
         	left.push(arr[i]);
@@ -27,11 +27,11 @@ function quickSort(arr) {
         	right.push(arr[i]);
         }
     }
-    let x = [...quickSort(left), pivot, ...quickSort(right)];
-    return x
+    let sortedArray = [...quickSort(left), pivot, ...quickSort(right)];
+    return sortedArray;
 }
-let x = quickSort(goal);
-_("console").innerHTML = x;
+let array = quickSort(goal);
+_("console").innerHTML = array;
 
 </script>
 
