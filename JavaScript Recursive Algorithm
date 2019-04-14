@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>JavaScript Recursive Algorithm</h2>
+        <p id="show"></p>
+        <script>
+            const rps = (rounds) => {
+                result = [];
+                posibilites = ['r', 'p', 's'];
+                const play = (playedSoFar, rounds) => {
+                    let i = 0;
+                    console.log('First Time: ' + rounds)
+                    if(rounds === 0) {
+                        result.push(playedSoFar);
+                        return;
+                    }
+                    for (; i < 3; i++) {
+                        console.log('Second Time: ' + rounds)
+                        play(playedSoFar + posibilites[i], rounds -1)
+                        console.log('Inside Loop: ' + rounds 
+                        + ' \nResult: ' + result + 
+                        '\nposibilites[i]: ' + posibilites[i] + '\ni = ' + i)
+                    }
+                    console.log('Third Time: ' + rounds)
+                }
+                play('', rounds)
+                return result;
+            }
+            const playing = rps(3)
+            document.getElementById("show").innerHTML = playing;
+        </script>
+	</body>
+</html>
