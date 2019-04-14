@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <h2>Shortest way to write a factorial function in JavaScript</h2>
+    <input type="number" >
+    <p></p>
+    <button>Save</button>
+	<script>
+		
+        const _ = (el) => document.querySelector(el); 
+        _("button").addEventListener( 'click', () => {
+        	let i = _('input').value;
+            _("p").innerHTML = (f=n=>n<2?1:n*f(n-1))(i) 
+        })
+        
+        //   (f=n=>n<2?1:n*f(n-1))(i)   This was the function()
+
+    </script>
+    </body>
+</html>
